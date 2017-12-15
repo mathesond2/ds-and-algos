@@ -44,65 +44,54 @@ queue values - (first)2-5-7-3-6-9(last)
 myQueue.until(7)
 => 3
 What's the time complexity?
-
-
-
-
  */
 
 function Queue(capacity) {
+  this._capacity = capacity || Infinity;
   this._storage = {};
-  this._length = 0;
-  this._maxLength = capacity;
+  this._head = 0;
+  this._tail = 0;
 }
 
+// O(1)
 Queue.prototype.enqueue = function(value) {
-  let lastProperty = Object.keys(this._storage)[Object.keys(this._storage).length - 1];
-
-  if (lastProperty === undefined) {
-    this._storage[this._length] = value;
-  } else {
-    let newKey = lastProperty + 1;
-    this._storage[newKey] = value;
+  if (this.count() < this._capacity) {
+    this._storage[this._tail++] = value;
+    return this.count();
   }
-  
-  // console.log(`lastProperty is ${lastProperty}`);
-  return this.length++;
+  return 'Max capacity already reached. Remove element before adding a new one.';
 };
-// Time complexity:
 
+// O(1)
 Queue.prototype.dequeue = function() {
-  let firstProperty = Object.keys(this._storage)[0];
-  delete this._storage[firstProperty];
-  this._length--;
-
-  let lastProperty = Object.keys(this._storage)[Object.keys(this._storage).length - 1];
-  return lastProperty;
+  var element = this._storage[this._head];
+  delete this._storage[this._head];
+  if (this._head < this._tail) this._head++;
+  return element;
 };
-// Time complexity:
 
+// O(1)
 Queue.prototype.peek = function() {
-  let lastProperty = Object.keys(this._storage)[Object.keys(this._storage).length - 1];
-  return this._storage[lastProperty];
-};
+  return this._storage[this._head];
+}
 
+// O(1)
 Queue.prototype.count = function() {
-  return this._length;
+  return this._tail - this._head;
 };
-// Time complexity:
 
 var myQueue = new Queue(5);
 myQueue.enqueue('hi');
 myQueue.enqueue('hello');
 myQueue.enqueue('how are you');
 myQueue.dequeue();
-myQueue.enqueue('yo');
-myQueue.dequeue();
-myQueue.enqueue('yesssss');
-// console.log(myQueue);
+// myQueue.enqueue('yo');
+// myQueue.dequeue();
+// myQueue.enqueue('yesssss');
 
-// console.log(myQueue.count());
-console.log(myQueue.peek());
+console.log(myQueue);
+
+
 /*
 *** Exercises:
 
@@ -111,6 +100,4 @@ console.log(myQueue.peek());
 2. Implement a double-ended queue, with the following methods: enqueueLeft, dequeueLeft, enqueueRight, dequeueRight.
 
 3. Given a tree, print out the value of each node in breadth-first order using a queue data structure.
-
-
  */
