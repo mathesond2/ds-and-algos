@@ -479,12 +479,10 @@ myList.unshift();  //O(n)
 </details>
 
 <details>
-<summary>Sorting</summary>
-
-sorting sucks in terms of speed, but we need to kow it for interviewing.
-
-<details>
 <summary>Bubble Sort</summary>
+
+* sorting sucks in terms of speed, but we need to kow it for interviewing.
+
 bubble sort = repeatedly swaps adjacent elements that are out of order. values 'bubble up' to the top of the data structure. 
 
 the higher numbers bubble up to the end.
