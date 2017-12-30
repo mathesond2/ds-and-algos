@@ -15,8 +15,7 @@
   ^ if you know all these things about a DS, you know a DS.
   
 <details>
-<summary>Stacks & Queues</summary>
-  #### Stacks
+<summary>Stacks</summary>
   LIFO - list item added into the stack will be the first one taken out. 
 
   * a stack is basically an array that can ONLY push() and pop().
@@ -92,9 +91,10 @@ myWeeklymenu.push("Rice");
 myWeeklymenu.pop();
 myWeeklymenu.size();
 ```
+</details>
 
-
-#### Queues
+<details>
+<summary>Queues</summary>
 enque = add
 deque = subtract
 
@@ -483,7 +483,8 @@ myList.unshift();  //O(n)
 
 sorting sucks in terms of speed, but we need to kow it for interviewing.
 
-##### Bubble Sort
+<details>
+<summary>Bubble Sort</summary>
 bubble sort = repeatedly swaps adjacent elements that are out of order. values 'bubble up' to the top of the data structure. 
 
 the higher numbers bubble up to the end.
@@ -514,8 +515,10 @@ You could go to the end of 'Elementary Sorting: Bubble Sort' video to understand
 
 again: 
 bubble loop time complextity = 0(n^2)
+</details>
 
-#### Stability and Adaptability
+<details>
+<summary>Algo Stability and Adaptability</summary>
 * so far we've only thought about algo quality in terms of how fast it is. theres a few other things we can consider and in sorting, we're also looking for STABILITY.
 
 a sorting algo is stable if it:
@@ -542,8 +545,10 @@ looks good...however, what if we have an additional requirement of also sorting 
 another consideration: ADAPTABILITY
 
 - this was highly glossed over...something to look up, for sure.
+</details>
 
-#### Selection Sort
+<details>
+<summary>Selection Sort</summary>
 * = selects the smallest element in an array, pushes it into a new array. 
 ```js
 [1,6,8,2,5];
@@ -557,9 +562,10 @@ Selection sort in place:
 ```js
 [1,2,5,6,8]; //as you see, no new array. 
 ```
+</details>
 
-
-###### Insertion Sort
+<details>
+<summary>Insertion Sort</summary>
 * = Selects the first element in an array, pushes it into a new array. as each new element is added ,insert the new element in the corect order. 
 
 ```js
@@ -595,9 +601,11 @@ Question on Adaptability:
 
 #### Exercises: bubble, insertion, selection.
 * all available in `/elementary-sorting`.
+</details>
 
+<details>
+<summary>Merge Sort</summary>
 
-## Merge Sort
 Divide and conquer
 0. recognize the base case
 1. divide: break down the problem during each call
@@ -687,11 +695,10 @@ This is so fucking confusing.
 I think it was confusing beause I was thinking of it in terms of 1 function when it was basically 2 functions: theres the fn for breaking the array down in halves, and then inside that function we call the function to actually then take those broken down, 1-index-based arrays, sort them, and push them in. 
 
 TLDR: 1 fn for breaking down array, 1 fn for merging into one ordered array.
+</details>
 
-
-
-# Quick Sort
-
+<details>
+<summary>Quick Sort</summary>
 * this is another sorting algo, pretty famous. 
 
 remember!
