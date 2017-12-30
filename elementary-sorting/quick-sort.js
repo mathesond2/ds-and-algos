@@ -21,15 +21,14 @@ Variants:
 - Implement a multi-pivot quicksort (ex: partition into 3 subarrays using 2 pivots)
 */
 
-const myArr = [1,2,6,3,7,9,4];
 
 function quicksort(array, lo = 0, hi = array.length-1) {
   if (lo < hi) {
     var p = partition(array, lo, hi);
     
     // sort subarrays
-    quicksort(array, lo, p-1);
-    quicksort(array, p+1, hi);
+    // quicksort(array, lo, p-1);
+    // quicksort(array, p+1, hi);
   }
 
   // for initial call, return sorted array
@@ -45,12 +44,12 @@ function partition(arr, lo, hi) {
 
   for (var i=lo; i<hi; i++) {
     if (arr[i] <= pivot) {     //  1<= 4? Y | 2<=4? Y | 6<=4? N!| 3<=4? Y| 7<=4? N!| 9<=4? N!|
-      swap(arr, pivotLoc, i);  //  (arr, 0, 0)| arr(1,1)|--| (arr, 2, 3)|--|--|
+      swap(arr, pivotLoc, i);  //  (arr, 0, 0)| (arr,1,1)|--| (arr, 2, 3)|--|--|
       pivotLoc++;              //  1|2|--|--|--|
     }
   }
   
-  swap(arr, pivotLoc, hi);
+  swap(arr, pivotLoc, hi); //with final resting place in view, swap last value (aka the PIVOT) with the value in the pivot location
 
   return pivotLoc;
 }
@@ -66,5 +65,5 @@ function swap (arr, i1, i2) {
   return arr;
 }
 
-
+const myArr = [1,2,6,3,7,9,4];
 console.log(quicksort(myArr));

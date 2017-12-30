@@ -140,6 +140,7 @@ JS has no such thing as private variables, so the `_` mark denotes it to other v
 
 # Recursion
 recursion = when a function calls itself.
+
 ```js
 var callMe = function() {
   callMe();
@@ -292,7 +293,9 @@ result *= 5;
 
 in this case, `num` is our base case, this is when the return statement will occur. 
 
-one thing I've noticed is a flaw in my own thinking is that I thought that when a base case is reached in a recursive function, the return statement simply breaks us out of the function and returns the statement and then things are over. that is not true, what happens when the base case is reached is the return statement retuns something and then we go from the top of the stack to the bottom of it, adding the new values to calculate whatever it is we're trying to calculate,  returning that calculation to the next function in the stack and popping the current function off the stack and so forth until we hit the beginning of the stack......using the snowball analogy, this makes total sense. we created a stack of functions until the base case is met, and then once that base case is met, we unwind the stack function by function, calculating values and popping off functions one by one until we get to the bottom.
+one thing I've noticed is a flaw in my own thinking is that I thought that when a base case is reached in a recursive function, the return statement simply breaks us out of the function and returns the statement and then things are over. that is not true, what happens when the base case is reached is the return statement retuns something and then we go from the top of the stack to the bottom of it, adding the new values to calculate whatever it is we're trying to calculate,  returning that calculation to the next function in the stack and popping the current function off the stack and so forth until we hit the beginning of the stack......using the snowball analogy, this makes total sense. 
+
+we created a stack of functions until the base case is met, and then once that base case is met, we unwind the stack function by function, calculating values and popping off functions one by one until we get to the bottom.
 
 Recursion vs. loops
 - loops are more performant than recursion in JS
@@ -683,11 +686,6 @@ I think it was confusing beause I was thinking of it in terms of 1 function when
 
 TLDR: 1 fn for breaking down array, 1 fn for merging into one ordered array.
 
-ALSO! merge sort is allegedly the fastest of all the other sorts?
-
-
-
-
 
 
 # Quick Sort
@@ -806,4 +804,66 @@ partition(arr, first, last) {
 * quick sorts are the most quick sorting algorithms UNLESS you have an algo that is mostly sorted already OR you have a case where the highest number is on the last element always..if its like that, you might as well do a bubble sort. 
 
 **Exercises in `elementary-sorting/quick-sort.js`**
+
+
+
+
+
+# trees
+- trees are upside down in CS
+- top is called 'root', and child nodes are 'children'.
+- nodes with no children are called 'leaves'.
+
+#### interface: trees
+* trees are a data structure, so we'll use JS' pseudoclassical class structure
+
+constructor:
+  - storage 
+  - root
+methods:
+  - insert(key) insert a new key in the tree
+  - search(key) search for the key in the tree and returns true if exists and false if not
+  - min/max: returns min/max value of tree
+  - remove(key): removes a key from a tree
+
+
+
+
+# Linked Lists
+* a primitive data structure, we dont use it that match.
+* its basically a tree where each node only has one child. 
+
+each node in the list contains:
+  1. stored data - a node value
+  2. stored reference - a LINK - to the next item in the list.
+
+**at the end of our linked list, the pointer (reference) is listed as null.**
+
+
+* linked list removal = just change the reference pointer..
+ex: 
+node a -> contains reference to node b -> contains reference to node c
+remove node b like: `node a -> contains a reference to node c`
+
+#### Interface: linked list
+1. constructor fn
+  - storage
+  - head
+2. methods
+  - addToTail(val) // adds node to tail
+  - remove(node)   // removes node from list & returns it
+
+* Linked lists kinda suck for lookup but are great for adding/removing to a DS quickly.
+
+### Why Use a linked list
+* lists vs arrays
+  * traditionally arrays have a fixed size, linked lists dont
+  * linked lists are efficient at inserting and deleting, not so 
+  * Random Access is NOT efficient for a linked list (ex: you want something at index 5? you'll have to go through every element in list to retrieve the element at index 5)
+  * linked lists have no waste of memory beause of its dynamic size, whereas arrays do
+  * sequential access is faster in arrays because elements have specific memory locations.
+
+  SO Linked Lists are efficient at inserting/deleting, but suck ass for retrieval.
+
+**Linked List example gone through and understood via youtube, exercise in `linkedlist.js`**
 

@@ -53,13 +53,13 @@ function mergeSortRecursive (array) {
 
 function mergeSortRecursive(arr) {
   if (arr.length <= 1) { return arr; }
+  // console.log(arr);
 
   let L = arr.slice(0, arr.length/2);
   let R = arr.slice(arr.length/2);
-
+  
   let Lsorted = mergeSortRecursive(L);
   let Rsorted = mergeSortRecursive(R);
-
   return mergeArrays(Lsorted, Rsorted);
 }
 
@@ -89,10 +89,6 @@ function mergeArrays(arrOne, arrTwo) {
 
   return outputArray;
 }
-
-// var myArr = [1,20,50];
-// var myArrTwo = [9,33,230];
-// console.log(mergeArrays(myArr, myArrTwo));
 
 let blah = [2, 5, 3, 9, 6, 8];
 console.log(mergeSortRecursive(blah));
