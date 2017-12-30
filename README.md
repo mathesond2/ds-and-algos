@@ -1,6 +1,3 @@
-Stacks & Queues
-===
-
 #### ingredients to learn data structures:
 1. learn the DS concept
   - draw it
@@ -16,7 +13,9 @@ Stacks & Queues
   - How can you optimize?
 
   ^ if you know all these things about a DS, you know a DS.
-
+  
+<details>
+<summary>Stacks & Queues</summary>
   #### Stacks
   LIFO - list item added into the stack will be the first one taken out. 
 
@@ -132,13 +131,13 @@ function Stack(capacity) {
 ```
 
 JS has no such thing as private variables, so the `_` mark denotes it to other variables as,"hey this is my interface so do not modify it!!!"
+</details>
 
 
 
 
-
-
-# Recursion
+<details>
+<summary>Recursion</summary>
 recursion = when a function calls itself.
 
 ```js
@@ -315,9 +314,10 @@ function runRecursiveLoop(start, end) {
 ```
 
 NOTE: Exercises are available in `recursion-intro.js`.
+</details>
 
-
-#### Time Complexity
+<details>
+<summary>Time Complexity</summary>
 What makes an algorithm fast?
 
 space complexity = how much memory is used?
@@ -476,8 +476,10 @@ myList.unshift();  //O(n)
 //calculate the time complexity for the 
 //native methods above (separately)
 ```
+</details>
 
-# Sorting
+<details>
+<summary>Sorting</summary>
 
 sorting sucks in terms of speed, but we need to kow it for interviewing.
 
@@ -804,12 +806,12 @@ partition(arr, first, last) {
 * quick sorts are the most quick sorting algorithms UNLESS you have an algo that is mostly sorted already OR you have a case where the highest number is on the last element always..if its like that, you might as well do a bubble sort. 
 
 **Exercises in `elementary-sorting/quick-sort.js`**
+</details>
 
 
 
-
-
-# trees
+<details>
+<summary>trees</summary>
 - trees are upside down in CS
 - top is called 'root', and child nodes are 'children'.
 - nodes with no children are called 'leaves'.
@@ -825,11 +827,11 @@ methods:
   - search(key) search for the key in the tree and returns true if exists and false if not
   - min/max: returns min/max value of tree
   - remove(key): removes a key from a tree
+</details>
 
 
-
-
-# Linked Lists
+<details>
+<summary>Linked Lists</summary>
 * a primitive data structure, we dont use it that match.
 * its basically a tree where each node only has one child. 
 
@@ -866,4 +868,4 @@ remove node b like: `node a -> contains a reference to node c`
   SO Linked Lists are efficient at inserting/deleting, but suck ass for retrieval.
 
 **Linked List example gone through and understood via youtube, exercise in `linkedlist.js`**
-
+</details>
