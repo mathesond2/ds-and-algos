@@ -874,3 +874,130 @@ remove node b like: `node a -> contains a reference to node c`
 
 **Linked List example gone through and understood via youtube, exercise in `linkedlist.js`**
 </details>
+
+
+<details>
+<summary>Hash Tables</summary>
+
+
+made of 2 things:
+* something to store stuff in
+* a hashing fn
+
+* JS objects are hash tables underneath.
+
+* JS objects are represented as key/value pairs `user: mathesond2`
+
+* a hashing fn maps the key to an index. this is what makes object key/val lookup as constant time O(1).
+
+
+#### Concept
+a hashing fn = takes an input of any size and returns a hash code identifier of a fixed size.
+
+myHash('really long string') => 7
+
+myHash('short string') => 11
+
+think of a hash table as the phone book, using the name, getting the address of a name
+
+#### Pseudocode
+```js
+
+myHash(input) { //must be a string,number, (whatever constraints you want on it)
+
+//'hello are we there yet' => 764.z
+//'hello are we there yet' => 764.z (you want the same thing everytime)
+
+
+}
+```
+
+*  how do we do this? here's one way....
+1. get the ascii value of each character
+2. add or multiply them together
+3. then return it as something like binary or hex instead of a decimal value (base16).
+
+
+#### key components
+1. storage (cant use an object, we can use an array)
+2. hashing fn - this will take our input and return a number that could be an index on our array.
+
+
+#### Operations
+myHashTable.set(prop, val);
+myHashTable.get(prop); 
+myHashTable.remove(prop);
+
+another example of how a hash table works:
+
+```js
+myObj = {};
+myObj.something = true;
+myObj.hello = 'hola';
+
+{something: true, hello: 'hola'}
+
+myHash('something') => //returns 3 for index value in memory
+
+memory [___, ___, ___, ___, true]
+
+myObj.something //true
+```
+
+**when we call `myObj.something`, under the hood, JS is using a hash table to get the address of where 'true' lives in memory.**
+
+
+### Pseudocoding
+
+```js
+
+Constructor
+  storage = [und, und, und, und, und]; //size of 5, und = undefined..just pseudocode here.
+  hashingFn(val) => index for array //(0-4)
+
+
+  set(key, val)
+    //save the val in the array
+      //run the hashingFn('something') => 3
+      //save 'true' (our val) to the 3rd index of our storage
+
+  get(key)
+    //we want to return the val saved in storage
+      //run the hashingFn on the key again, which will give you the address of the key. then using that key, retrieve the val from the storage array.
+
+  remove(key)
+    // set the value at the index to null
+      //we get the key by hashing the key
+      //look up the index in the storage and set to null.
+```
+
+### Dealing with collisions
+
+a collision is what happens when you have the same index/address for multiple values. this is bound to eventually happen with a fixed number of events.
+
+so we should account for this. 
+
+```
+storage = [und, und, und, und, und];
+
+// becomes
+storage = [und, und, und, [true, 'hola'], und];
+```
+
+^ so we store an array that holds the 2 values that have the same index/address. but how do we still grab the right one?
+
+you can store the key as well as the value. we create what we call 'a tuple':
+
+```js
+storage = [
+  und, 
+  und, 
+  und, 
+  [[something,true], ['hello', 'hola']], und
+];
+```
+
+^ this works but we'll have to loop through the inside array to find the matching key.
+
+
+</details>
