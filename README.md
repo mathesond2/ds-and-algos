@@ -828,7 +828,7 @@ partition(arr, first, last) {
 
 
 <details>
-<summary>trees</summary>
+<summary>Trees</summary>
 - trees are upside down in CS
 - top is called 'root', and child nodes are 'children'.
 - nodes with no children are called 'leaves'.
