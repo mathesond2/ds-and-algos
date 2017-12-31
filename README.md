@@ -13,7 +13,13 @@
   - How can you optimize?
 
   ^ if you know all these things about a DS, you know a DS.
-  
+
+#### whats a data structure anyway? 
+* a way of organizing data, a schema. a container for data that fits specific needs. 
+
+* so much data out there, we need a way to structure it out. as more data is accumulated, you need a way to 
+structure it out.
+
 <details>
 <summary>Stacks</summary>
   LIFO - list item added into the stack will be the first one taken out. 
