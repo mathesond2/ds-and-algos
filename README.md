@@ -1,3 +1,8 @@
+# Data Structures & Algorithms
+This is an **ongoing** project of self-study, consisting of notes and coursework from the Front End Masters course "Data Structures and Algorithms in JavaScript", in addition to helpful miscellaneous resources and exercises found elsewhere on the web.
+
+<details>
+<summary>General</summary>
 #### ingredients to learn data structures:
 1. learn the DS concept
   - draw it
@@ -19,6 +24,7 @@
 
 * so much data out there, we need a way to structure it out. as more data is accumulated, you need a way to 
 structure it out.
+</details>
 
 <details>
 <summary>Stacks</summary>
