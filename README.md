@@ -3,6 +3,7 @@ This is an **ongoing** project of self-study, consisting of notes and coursework
 
 <details>
 <summary>General</summary>
+
 #### ingredients to learn data structures:
 1. learn the DS concept
   - draw it
