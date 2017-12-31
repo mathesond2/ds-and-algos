@@ -70,22 +70,12 @@ var makeHashTable = function(max) {
   }
   
   //now look up definitions in our hash table;
-  for (var key in myDictionary) {
-      console.log(hashTable.retrieve(key));
-  }
-  //RESULTS
-  //ailurophile: a cat-lover
-  //assemblage: a gathering
-  //bucolic: in a lovely rural setting
-  //ebullience: bubbling enthusiasm
-  //evanescent: vanishing quickly, lasting a very short time
-  //evocative: suggestive
-  //gossamer: the finest piece of thread, a spider's silk
-  //harbinger: messenger with news of the future
-  //ailurophile: a cat-lover
-  //gossamer: the finest piece of thread, a spider's silk
-  console.log(hashTable.insert('labyrinthine', 'twisting and turning').retrieve('labyrinthine')); // labyrinthine: twisting and turning
+  // for (var key in myDictionary) {
+  //     console.log(hashTable.retrieve(key));
+  // }
+
+  // console.log(hashTable.insert('labyrinthine', 'twisting and turning').retrieve('labyrinthine')); // labyrinthine: twisting and turning
   console.log(hashTable.retrieve('ailurophile')); // ailurophile: a cat-lover
-  console.log(hashTable.retrieve('gossamer')); //gossamer: the finest piece of thread, a spider's silk
+  // console.log(hashTable.retrieve('gossamer')); //gossamer: the finest piece of thread, a spider's silk
   //console.log(hashTable.insert('incipient')); //throw ('Insertion of undefined not possible')
   //console.log(hashTable.insert('', 'a naive young women')); //throw ('Insertion of undefined not possible')
